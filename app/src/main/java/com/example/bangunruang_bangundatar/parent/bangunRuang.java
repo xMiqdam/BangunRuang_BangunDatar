@@ -1,0 +1,68 @@
+package com.example.bangunruang_bangundatar.parent;
+
+import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
+
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+
+import com.example.bangunruang_bangundatar.R;
+import com.example.bangunruang_bangundatar.Adapter.adapter;
+import com.example.bangunruang_bangundatar.bangun_Ruang.Tabungg;
+import com.example.bangunruang_bangundatar.bangun_Ruang.balok;
+import com.example.bangunruang_bangundatar.bangun_Ruang.bola;
+import com.example.bangunruang_bangundatar.bangun_Ruang.kubus;
+import com.example.bangunruang_bangundatar.ModelClass.moduleObject;
+
+import java.util.ArrayList;
+
+public class bangunRuang extends Fragment implements adapter.ItemClickListener {
+
+
+    ArrayList<moduleObject> modelbangundatar = new ArrayList<>();
+    Context context;
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        View rootview = inflater.inflate(R.layout.fragment_bangun_ruang,container,false);
+        RecyclerView rvBangunDatar = rootview.findViewById(R.id.rvBangunRuang);
+
+        modelbangundatar.add(new moduleObject("https://cdn0-production-images-kly.akamaized.net/46pGBgyPYjMhbTbt-v9TwKZWtLQ=/800x800/smart/filters:quality(75):strip_icc():format(webp)/kly-media-production/medias/3518168/original/026826900_1626957470-KUBUSSS.jpg","Kubus","Sisi x Sisi x Sisi"));
+        modelbangundatar.add(new moduleObject("https://kiddienglish.files.wordpress.com/2012/07/balok.jpg","Balok","Panjang x Lebar x Tinggi"));
+        modelbangundatar.add(new moduleObject("data:image/png;base64,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","Tabung","3,14 x r² x Tinggi"));
+        modelbangundatar.add(new moduleObject("data:image/png;base64,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","Bola","4/3 x 3,14 x  r³"));
+
+
+        // Inflate the layout for this fragment
+        rvBangunDatar.setLayoutManager(new LinearLayoutManager(getActivity()));
+        adapter adapter = new adapter(getContext(),modelbangundatar);
+        rvBangunDatar.setAdapter(adapter);
+        adapter.setClickListener(this);
+
+        return rootview;
+    }
+
+    @Override
+    public void onItemClick(View view, int position) {
+        String pilihan = modelbangundatar.get(position).getTitle();
+
+        if ("Kubus".equals(pilihan)) {
+            startActivity(new Intent(getActivity(), kubus.class));
+        } else if ("Balok".equals(pilihan)) {
+            startActivity(new Intent(getActivity(), balok.class));
+        } else if ("Tabung".equals(pilihan)) {
+            startActivity(new Intent(getActivity(), Tabungg.class));
+        } else if ("Bola".equals(pilihan)) {
+            startActivity(new Intent(getActivity(), bola.class));
+        } else {
+            // Tindakan default jika tidak ada yang cocok
+        }
+    }
+}

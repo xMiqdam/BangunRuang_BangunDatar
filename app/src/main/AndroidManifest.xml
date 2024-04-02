@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.BangunRuang_BangunDatar"
+        tools:targetApi="31">
+        <activity
+            android:name=".bangun_Ruang.Tabungg"
+            android:exported="false" />
+        <activity
+            android:name=".Tabung"
+            android:exported="false" />
+        <activity
+            android:name=".bangun_Ruang.kerucut"
+            android:exported="false" />
+        <activity
+            android:name=".bangun_Ruang.bola"
+            android:exported="false" />
+        <activity
+            android:name=".bangun_Ruang.tabung"
+            android:exported="false" />
+        <activity
+            android:name=".bangun_Ruang.balok"
+            android:exported="false" />
+        <activity
+            android:name=".bangun_Ruang.kubus"
+            android:exported="false" />
+        <activity
+            android:name=".bangunDatar.persegipanjang"
+            android:exported="false" />
+        <activity
+            android:name=".bangunDatar.segitiga"
+            android:exported="false" />
+        <activity
+            android:name=".bangunDatar.persegi"
+            android:exported="false" />
+        <activity
+            android:name=".bangunDatar.lingkaran"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
